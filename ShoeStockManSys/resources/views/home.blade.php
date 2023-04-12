@@ -112,10 +112,14 @@
 
 	<div class="container">
         <main>
+            
             <form action="{{url('upload')}}" method="POST">
                 @csrf
                 <div>
-                    <h1>Add Shoes In The Stocks</h1>
+                    <h1>Add Shoes In The Stocks</h1><br>
+                    @if (Session::has('message'))
+                    <div class="alert alert-success">{{ Session::get('message') }}</div>
+                    @endif
                 </div><br>
                 <label for="shoe-name"><B>Shoe Name:</B></label>
                 <input type="text" id="name" name="name" required>

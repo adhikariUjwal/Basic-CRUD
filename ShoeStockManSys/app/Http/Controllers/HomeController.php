@@ -34,7 +34,7 @@ class HomeController extends Controller
         $shoeVariable->save();
 
         //returns to same page after submitting.
-        return redirect('/view');
+        return redirect()->back()->with('message','Shoe Added! Please Check "List Shoes"');
     }
 
     public function view()
